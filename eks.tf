@@ -32,13 +32,13 @@ module "eks" {
 
   eks_managed_node_groups = {
     default = {
-      instance_types       = ["t2.medium"]
+      instance_types       = ["t3.medium"]
       force_update_version = true
       release_version      = var.ami_release_version
 
-      min_size     = 1
-      max_size     = 3
-      desired_size = 1
+      min_size     = 2
+      max_size     = 6
+      desired_size = 2
 
       update_config = {
         max_unavailable_percentage = 50
